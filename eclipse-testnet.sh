@@ -108,14 +108,9 @@ echo
 
 
 #!/bin/bash
-file_location=/home/eclipse-deposit/bin/private_key.txt
-if [ -e $policy ]; then
-  echo "File private_key.txt already exists!"
-else
-  cat > $file_location <<EOF
+cat << EOF > private_key.txt
 $ethereum_private_key
 EOF
-fi
 
 for ((i=1; i<=repeat_count; i++)); do
     echo -e "${YELLOW}Running Bridge Script (Tx $i)...${NC}"
