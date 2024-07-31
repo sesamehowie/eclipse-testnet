@@ -96,8 +96,8 @@ echo
 echo -e "${GREEN}Solana Address: $(solana address)${NC}"
 echo
 
-if [ -d "testnet-deposit" ]; then
-    execute_and_prompt "Removing testnet-deposit Folder..." "rm -rf testnet-deposit"
+if [ -d "eclipse-deposit" ]; then
+    execute_and_prompt "Removing eclipse-deposit Folder..." "rm -rf eclipse-deposit"
 fi
 
 read -p "Enter your Solana address: " solana_address
@@ -105,6 +105,17 @@ read -p "Enter your Ethereum Private Key: " ethereum_private_key
 read -p "Enter the number of times to repeat Transaction (4-5 tx Recommended): " repeat_count
 gas_limit="4000000"
 echo
+
+
+#!/bin/bash
+file_location=/home/eclipse-deposit/bin/private_key.txt
+if [ -e $policy ]; then
+  echo "File private_key.txt already exists!"
+else
+  cat > $file_location <<EOF
+$ethereum_private_key
+EOF
+fi
 
 for ((i=1; i<=repeat_count; i++)); do
     echo -e "${YELLOW}Running Bridge Script (Tx $i)...${NC}"
