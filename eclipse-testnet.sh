@@ -120,7 +120,7 @@ fi
 for ((i=1; i<=repeat_count; i++)); do
     echo -e "${YELLOW}Running Bridge Script (Tx $i)...${NC}"
     echo
-    node bin/cli.js -k private-key.txt -d $solana_address -a 0.002 --sepolia
+    node bin/cli.js -k private_key.txt -d $solana_address -a 0.002 --sepolia
     echo
     sleep 3
 done
