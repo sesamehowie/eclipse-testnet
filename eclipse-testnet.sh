@@ -58,7 +58,7 @@ echo
 echo -e "${YELLOW}Save these mnemonic phrases in safe Place.If there will any Airdrop in future, you will be eligible from this wallet so save it${NC}"
 echo
 
-read -p "Enter your mneomic phrase: " mnemonic
+read -p "Enter your mnemonic phrase: " mnemonic
 echo
 
 cat << EOF > secrets.json
